@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: ecommerce_db
+      username: ecommerce_user
+      password: password
