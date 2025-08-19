@@ -15,18 +15,18 @@ services:
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
   # mongoDB Database Service
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb-ecommerce
-    restart: always
-    environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: password
-        MONGO_INITDB_DATABASE: ecommerce_db
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data/mongodb:/data/db
+#  mongodb:
+#    image: mongo:latest
+#    container_name: mongodb-ecommerce
+#    restart: always
+#    environment:
+#        MONGO_INITDB_ROOT_USERNAME: root
+#        MONGO_INITDB_ROOT_PASSWORD: password
+#        MONGO_INITDB_DATABASE: ecommerce_db
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - ./data/mongodb:/data/db
 
   # rabbitMQ Service
   rabbitmq:
