@@ -16,7 +16,7 @@ spring:
     discovery:
       enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/user-micro
+    url: jdbc:postgresql://localhost:5432/fact-db
     username: postgres
     password: contrasegol
     driver-class-name: org.postgresql.Driver

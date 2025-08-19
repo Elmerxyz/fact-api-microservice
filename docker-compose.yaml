@@ -1,41 +1,28 @@
 version: "3.1"
 
 services:
-  #PostgreSQL Database Service
+  # PostgreSQL Database Service
   postgres:
     image: postgres:16
-    container_name: postgres-ecommerce
+    container_name: postgres-fact
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: contrasegol
-      POSTGRES_DB: postgres
+      POSTGRES_DB: fact-db
     ports:
       - "5432:5432"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
-  # mongoDB Database Service
-#  mongodb:
-#    image: mongo:latest
-#    container_name: mongodb-ecommerce
-#    restart: always
-#    environment:
-#        MONGO_INITDB_ROOT_USERNAME: root
-#        MONGO_INITDB_ROOT_PASSWORD: password
-#        MONGO_INITDB_DATABASE: ecommerce_db
-#    ports:
-#      - "27017:27017"
-#    volumes:
-#      - ./data/mongodb:/data/db
 
-  # rabbitMQ Service
+  # RabbitMQ Service
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: rabbitmq-ecommerce
+    container_name: rabbitmq-fact
     restart: always
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "5672:5672"     # Puerto para conexiones AMQP
+      - "15672:15672"   # Panel de administración web
     environment:
       RABBITMQ_DEFAULT_USER: user
-      RABBITMQ_DEFAULT_PASS: password
+      RABBITMQ_DEFAULT_PASS: "password123"

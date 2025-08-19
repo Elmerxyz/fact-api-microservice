@@ -15,10 +15,12 @@ spring:
   cloud:
     discovery:
       enabled: true
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: ecommerce_db
-      username: ecommerce_user
-      password: password
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fact-db
+    username: postgres
+    password: contrasegol
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
