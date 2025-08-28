@@ -11,5 +11,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompanyFilter extends BaseFilter {
-
+    private List<CompanyStatus> statuses;
+    private String searchTerm;
+    private String sortBy;
+    private boolean ascending;
+    private int currentPage;
+    private int pageSize;
 }

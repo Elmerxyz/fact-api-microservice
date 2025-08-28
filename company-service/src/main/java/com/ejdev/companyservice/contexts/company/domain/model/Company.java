@@ -1,5 +1,6 @@
 package com.ejdev.companyservice.contexts.company.domain.model;
 
+import com.ejdev.companyservice.contexts.company.domain.valueObject.CompanyId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Company {
-    private UUID companyId;
+    private CompanyId companyId;
     private String ruc;
     private String bussinessName;
     private String taxAddress;
